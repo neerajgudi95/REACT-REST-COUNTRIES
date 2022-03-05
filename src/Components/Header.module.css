@@ -1,0 +1,13 @@
+.header {
+  background-color: rgb(5, 19, 103);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  box-shadow: 2px 2px 2px 1px rgba(5, 19, 103, 0.2);
+}
+
+button {
+  color: white !important;
+}

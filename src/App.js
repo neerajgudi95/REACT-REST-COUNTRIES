@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Header from "./Components/Header";
+import SearchBar from "./Components/SearchBar";
+import "./App.css";
+import Countries from "./Components/Countries";
 
-function App() {
+const App = () => {
+  const [mode, setMode] = useState(false);
+  const [countriesList, setCountriesList] = useState([]);
+  const fetchCountries = async (url) => {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Something's wrong please try reloading the page`);
+      }
+      const data = await response.json();
+      setCountriesList(data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    const url = "https://restcountries.com/v2/all";
+    fetchCountries(url);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header mode={mode} selectMode={setMode} />
+      <SearchBar />
+      <Countries countriesList={countriesList} />
     </div>
   );
-}
+};
 
 export default App;
