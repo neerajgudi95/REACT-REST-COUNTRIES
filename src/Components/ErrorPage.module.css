@@ -1,0 +1,18 @@
+.errorPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.errorImg {
+  width: 400px;
+  height: 400px;
+  background-image: url("../assets/2456051.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.errorPage h3 {
+  margin-top: 20px;
+}

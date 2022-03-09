@@ -1,17 +1,19 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useContext } from "react";
+import ThemeContext from "../Contexts/themeContext";
 import styles from "./SearchBar.module.css";
 
-const SearchBar = () => {
-  const [optionSelected, setOptionSelected] = useState("all");
+const SearchBar = ({ selectRegion }) => {
   const inputRef = useRef();
-
+  const ctx = useContext(ThemeContext);
   const searchCountry = (e) => {
     e.preventDefault();
     console.log(inputRef.current.value);
   };
-
+  const classes = ctx.darkThemeSelected
+    ? `${styles.searchBar} ${styles.darkMode}`
+    : `${styles.searchBar}`;
   return (
-    <div className={styles.searchBar}>
+    <div className={classes}>
       <form onSubmit={searchCountry}>
         <input
           type="text"
@@ -25,11 +27,10 @@ const SearchBar = () => {
           name="region"
           id="region"
           className={styles.selectBar}
-          value={optionSelected}
           onChange={(e) => {
-            console.log(e.target.value);
-            setOptionSelected(e.target.value);
+            selectRegion(e.target.value);
           }}
+          // value={selectedRegRef.current.value}
         >
           <option value="all">All</option>
           <option value="africa">Africa</option>

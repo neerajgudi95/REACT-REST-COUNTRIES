@@ -6,8 +6,17 @@
   justify-content: space-between;
   padding: 20px 30px;
   box-shadow: 2px 2px 2px 1px rgba(5, 19, 103, 0.2);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.1s ease-in-out;
 }
 
 button {
   color: white !important;
+}
+
+.darkMode {
+  background-color: rgb(8, 32, 50);
 }

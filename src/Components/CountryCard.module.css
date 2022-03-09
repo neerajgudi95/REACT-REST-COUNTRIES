@@ -1,12 +1,21 @@
 .countryCard {
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 2px 5px rgb(0 0 0 / 10%), 2px 2px 5px rgb(0 0 0 / 10%);
+  box-shadow: 0px 0px 22px -6px rgba(0, 0, 0, 0.75);
   padding: 20px;
   width: 350px;
   height: 400px;
   margin: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
 }
+
+.countryCard:hover {
+  box-shadow: 0px 0px 22px -6px rgba(0, 0, 0, 0.75),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
 .countryFlag {
   flex: 0.5;
   width: 100%;
@@ -23,11 +32,15 @@
   flex: 0.5;
   margin: 50px 0;
 }
-.countryName{
-    margin-bottom: 10px;
+.countryName {
+  margin-bottom: 10px;
 }
 .countryInfo span {
-    display: inline-block;
+  display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+}
+
+.darkMode .countryCard:hover {
+  box-shadow: 0 0px 7px rgb(224, 224, 224);
 }

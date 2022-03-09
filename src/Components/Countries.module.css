@@ -1,6 +1,21 @@
 .countries {
+  padding-top: 100px;
+  transition: all 0.4s ease-in-out;
+}
+
+.countries > p {
+  font-size: 1.5rem;
+  margin-left: 50px;
+}
+
+.countriesCard {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.darkMode {
+  background-color: rgb(8, 32, 50);
+  color: white;
 }

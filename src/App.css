@@ -3,3 +3,8 @@
 * {
   font-family: "Nunito Sans", sans-serif;
 }
+
+.darkMode {
+  background-color: rgb(8, 32, 50);
+  color: white;
+}
